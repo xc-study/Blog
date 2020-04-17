@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea{
+            border:1px solid #f40;
+            width:100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <textarea name="" id="everyDay" cols="30" rows="10"></textarea>
+        <button onclick="submit()">提交</button>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.5.0/jquery.js"></script>
+    <script>
+        function submit(){
+            $.post(
+                'editEveryDay',
+                $("#everyDay").val(),
+                function(){
+                    alert('上传成功！');
+                }
+            );
+        }
+    </script>
+</body>
+</html>
